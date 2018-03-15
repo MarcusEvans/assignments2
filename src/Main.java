@@ -122,6 +122,7 @@ public class Main {
         actingClass.Class();
         EnumTest mathClass = new EnumTest(Courses.STATS);
         mathClass.Class();
+        System.out.println("\n");
 
         //TODO Define and use a Category enumerated type.
 
@@ -135,6 +136,43 @@ public class Main {
         otherCategory.Category();
         EnumTest hatedCategory = new EnumTest(Category.TEST);
         hatedCategory.Category();
+        System.out.println("\n");
+
+
+        //TODO In the driver, generate 2 random assignments named assign1 and assign2.
+        assignments fClass = new assignments(Courses.THEOLOGY);
+        fClass.myCourses();
+        assignments sClass = new assignments(Courses.DATASTRUCTURES);
+        sClass.myCourses();
+        assignments tClass = new assignments(Courses.FRENCH);
+        tClass.myCourses();
+        assignments fourthClass = new assignments(Courses.PERFORMANCELITERATURE);
+        fourthClass.myCourses();
+        assignments fifthClass = new assignments(Courses.STATS);
+        fifthClass.myCourses();
+        System.out.println("\n");
+
+        assignments firstPriority = new assignments(PriorityTest.PRIORITYZERO);
+        firstPriority.myPriority();
+        assignments secondPriority = new assignments(PriorityTest.PRIORITYONE);
+        secondPriority.myPriority();
+        assignments thirdPriority = new assignments(PriorityTest.PRIORITYTWO);
+        thirdPriority.myPriority();
+        assignments fourthPriority = new assignments(PriorityTest.PRIORITYTHREE);
+        fourthPriority.myPriority();
+        System.out.println("\n");
+
+
+
+
+
+        //TODO Copy assign1 to assign3.
+
+
+
+        //TODO Override an Assignment.equals() method.
+
+        //TODO Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
 
 
     }
