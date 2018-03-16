@@ -3,6 +3,7 @@ import jdk.nashorn.internal.ir.Assignment;
 import javax.swing.text.DateFormatter;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -72,7 +73,7 @@ public class Main {
         System.out.println("\nWithout using a Set, the number of duplicated dates are " + countDuplicates(hundredRandomDates));
 
         //Count the number of evening (after 6pm) dates.
-        ArrayList<LocalDateTime> eveningDates = searchDatesInTimeframe(hundredRandomDates,18, 24 );
+        ArrayList<LocalDateTime> eveningDates = searchDatesInTimeframe(hundredRandomDates, 18, 24);
         System.out.println("\nThe number of evening dates are " + eveningDates.size());
 
         //Count the number of dates in each of the individual 12 months without using a Java Map.
@@ -85,8 +86,8 @@ public class Main {
         }
 
         //Count the number of dates in each of the individual 12 months using a Java Map.
-        if (month >= 1 && month <=12){
-            System.out.println("Using a Java Map, the number of dates in month " + month + " is " + mapByMonthSearch(hundredRandomDates,month));
+        if (month >= 1 && month <= 12) {
+            System.out.println("Using a Java Map, the number of dates in month " + month + " is " + mapByMonthSearch(hundredRandomDates, month));
         }
 
         //Determine the index of the latest LocalDateTime.
@@ -109,7 +110,7 @@ public class Main {
         fifthDay.tellItLikeItIs();
         EnumTest sixthDay = new EnumTest(DayOfTheWeek.SATURDAY);
         sixthDay.tellItLikeItIs();
-        EnumTest seventhDay = new EnumTest(DayOfTheWeek.SUNDAY );
+        EnumTest seventhDay = new EnumTest(DayOfTheWeek.SUNDAY);
         seventhDay.tellItLikeItIs();
 
 
@@ -153,7 +154,6 @@ public class Main {
         System.out.println("Assign3  " + assign3);
 
 
-
         //Override an Assignment.equals() method.
         Assignments c1 = new Assignments(10, 15);
         Assignments c2 = new Assignments(10, 15);
@@ -163,11 +163,16 @@ public class Main {
             System.out.println("Not Equal ");
         }
     }
-        //TODO Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
-
-
-
-
+        //Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
+//        Assignments timeOne = new Assignments(5);
+//        Assignments timeTwo = new Assignments(6);
+//        if (timeTwo < timeOne) {
+//            System.out.println(" Before");
+//        } else {
+//            System.out.println("After");
+//        }
+//
+//    }
 
     private static String formattedDate(LocalDateTime date) {
         String newDate = "";
