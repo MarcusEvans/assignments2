@@ -154,12 +154,20 @@ public class Main {
 
 
 
-        //TODO Override an Assignment.equals() method.
-
+        //Override an Assignment.equals() method.
+        Assignments c1 = new Assignments(10, 15);
+        Assignments c2 = new Assignments(10, 15);
+        if (c1 == c2) {
+            System.out.println("Equal ");
+        } else {
+            System.out.println("Not Equal ");
+        }
+    }
         //TODO Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
 
 
-    }
+
+
 
     private static String formattedDate(LocalDateTime date) {
         String newDate = "";
