@@ -1,3 +1,5 @@
+import jdk.nashorn.internal.ir.Assignment;
+
 import javax.swing.text.DateFormatter;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -126,7 +128,7 @@ public class Main {
 
         //TODO Define and use a Category enumerated type.
 
-        EnumTest mostDisliked = new EnumTest(Category.FINAL_EXAM);
+        EnumTest mostDisliked = new EnumTest(Category.FINALS);
         mostDisliked.Category();
         EnumTest nextMostDisliked = new EnumTest(Category.HOMEWORK);
         nextMostDisliked.Category();
@@ -140,28 +142,8 @@ public class Main {
 
 
         //TODO In the driver, generate 2 random assignments named assign1 and assign2.
-        assignments fClass = new assignments(Courses.THEOLOGY);
-        fClass.myCourses();
-        assignments sClass = new assignments(Courses.DATASTRUCTURES);
-        sClass.myCourses();
-        assignments tClass = new assignments(Courses.FRENCH);
-        tClass.myCourses();
-        assignments fourthClass = new assignments(Courses.PERFORMANCELITERATURE);
-        fourthClass.myCourses();
-        assignments fifthClass = new assignments(Courses.STATS);
-        fifthClass.myCourses();
-        System.out.println("\n");
-
-        assignments firstPriority = new assignments(PriorityTest.PRIORITYZERO);
-        firstPriority.myPriority();
-        assignments secondPriority = new assignments(PriorityTest.PRIORITYONE);
-        secondPriority.myPriority();
-        assignments thirdPriority = new assignments(PriorityTest.PRIORITYTWO);
-        thirdPriority.myPriority();
-        assignments fourthPriority = new assignments(PriorityTest.PRIORITYTHREE);
-        fourthPriority.myPriority();
-        System.out.println("\n");
-
+        Assignments assign1 = new Assignments(LocalDateTime.now(), new EnumTest(Courses.DATASTRUCTURES), new EnumTest(Category.TEST), rand.nextInt(4));
+        Assignments assign2 = new Assignments();
 
 
 
