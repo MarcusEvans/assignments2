@@ -143,6 +143,7 @@ public class Main {
 
         //TODO In the driver, generate 2 random assignments named assign1 and assign2.
         Assignments assign1 = new Assignments(LocalDateTime.now(), new EnumTest(Courses.DATASTRUCTURES), new EnumTest(Category.TEST), rand.nextInt(4));
+        System.out.println(assign1);
         Assignments assign2 = new Assignments();
 
 
