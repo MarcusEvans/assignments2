@@ -141,15 +141,16 @@ public class Main {
         System.out.println("\n");
 
 
-        //TODO In the driver, generate 2 random assignments named assign1 and assign2.
+        // In the driver, generate 2 random assignments named assign1 and assign2.
         Assignments assign1 = new Assignments(LocalDateTime.now(), new EnumTest(Courses.DATASTRUCTURES), new EnumTest(Category.TEST), rand.nextInt(4));
-        System.out.println(assign1);
+        System.out.println("Assign1  " + assign1);
         Assignments assign2 = new Assignments();
 
 
-
-
-        //TODO Copy assign1 to assign3.
+        // Copy assign1 to assign3.
+        Assignments assign3 = new Assignments();
+        assign3.equals(assign1);
+        System.out.println("Assign3  " + assign3);
 
 
 
