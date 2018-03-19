@@ -1,6 +1,9 @@
 import jdk.nashorn.internal.ir.Assignment;
 
 import javax.swing.text.DateFormatter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
@@ -160,10 +163,10 @@ public class Main {
         if (c1 == c2) {
             System.out.println("Equal ");
         } else {
-            System.out.println("Not Equal ");
+            System.out.println("\nNot Equal ");
         }
-    }
-        //Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
+
+        //TODO Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
 //        Assignments timeOne = new Assignments(5);
 //        Assignments timeTwo = new Assignments(6);
 //        if (timeTwo < timeOne) {
@@ -173,6 +176,31 @@ public class Main {
 //        }
 //
 //    }
+        // Write [X] randomly generated assignments to the file 'input.dat'.
+        assignmentsFileWriter(5,assign1);
+
+
+
+
+    }
+
+    private static void assignmentsFileWriter(int xAmount,Assignments program) {
+        File outfile = new File("input.dat");
+        try (PrintWriter pw = new PrintWriter(outfile)) {
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-mm-dd HH:MM");
+            for (int i = 0; i < xAmount; i++) {
+                Assignments fileOutput = program;
+                pw.println(fileOutput);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
 
     private static String formattedDate(LocalDateTime date) {
         String newDate = "";
