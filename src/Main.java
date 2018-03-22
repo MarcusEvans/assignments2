@@ -169,15 +169,16 @@ public class Main {
         List<String> fileReader = readFile("input.dat");
         System.out.println(fileReader + "\n");
 
-        //TODO Remove any duplicate assignments.
-//        Set<Assignments> duplicateDeleter = objectEraser();
-//        System.out.println(duplicateDeleter);
-
-
+        // Remove any duplicate assignments.
+        Set<Assignments> newObjects = new HashSet<>();
+        //ArrayList<Assignments> objects = new ArrayList<>();
+         for (int i = 0; i < fileReader.size(); i++) {
+            newObjects.add(assign1);
+        }
+        System.out.println(" Duplicated objects " + newObjects);
     }
 
-//    private static Set<Assignments> objectEraser() {
-//    }
+
 
 
     private static List<String> readFile(String filename) {
