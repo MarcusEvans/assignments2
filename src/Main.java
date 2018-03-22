@@ -1,10 +1,6 @@
 import jdk.nashorn.internal.ir.Assignment;
-
-import javax.swing.text.DateFormatter;
 import java.io.*;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -102,7 +98,7 @@ public class Main {
         System.out.println("The formatted date is " + formattedDate(hundredRandomDates.get(sc.nextInt())));
         //I had completely forgotten to submit the previous story, so if it looks like I completed this story incredibly quickly, it's because I temporarily removed this code so I could post the for the previous story.
 
-        //TODO Define and use a DayOfWeek enumerated type.
+        // Define and use a DayOfWeek enumerated type.
         EnumTest firstDay = new EnumTest(DayOfTheWeek.MONDAY);
         firstDay.tellItLikeItIs();
         EnumTest thirdDay = new EnumTest(DayOfTheWeek.WEDNESDAY);
@@ -115,7 +111,7 @@ public class Main {
         seventhDay.tellItLikeItIs();
 
 
-        //TODO Define and use a Course enumerated type.
+        // Define and use a Course enumerated type.
         EnumTest firstClass = new EnumTest(Courses.THEOLOGY);
         firstClass.Class();
         EnumTest nextClass = new EnumTest(Courses.DATASTRUCTURES);
@@ -128,7 +124,7 @@ public class Main {
         mathClass.Class();
         System.out.println("\n");
 
-        //TODO Define and use a Category enumerated type.
+        // Define and use a Category enumerated type.
 
         EnumTest mostDisliked = new EnumTest(Category.FINALS);
         mostDisliked.Category();
@@ -158,8 +154,8 @@ public class Main {
         //Override an Assignment.equals() method.
         Assignments c1 = new Assignments(10, 15);
         Assignments c2 = new Assignments(10, 15);
-        if (c1 == c2) {
-            System.out.println("Equal ");
+        if (c1.equals(c2)) {
+            System.out.println("\nEqual \n");
         } else {
             System.out.println("\nNot Equal ");
         }
@@ -175,16 +171,22 @@ public class Main {
 //
 //    }
         // Write [X] randomly generated assignments to the file 'input.dat'.
-        assignmentsFileWriter(5,assign1);
+        assignmentsFileWriter(5, "input.dat");
 
         //Read assignments from the file 'input.dat' and store them in an Assignment object.
-        List<String> fileReader = readFile("input.dat" );
+        List<String> fileReader = readFile("input.dat");
         System.out.println(fileReader + "\n");
 
-
+        //TODO Remove any duplicate assignments.
+//        Set<Assignments> duplicateDeleter = objectEraser();
+//        System.out.println(duplicateDeleter);
 
 
     }
+
+//    private static Set<Assignments> objectEraser() {
+//    }
+
 
     private static List<String> readFile(String filename) {
         List<String> records = new ArrayList<String>();
@@ -204,20 +206,19 @@ public class Main {
     }
 
 
-    private static void assignmentsFileWriter(int xAmount,Assignments program) {
-        File outfile = new File("input.dat");
+    private static void assignmentsFileWriter(int xAmount,String Filename) {
+        Assignments object = new Assignments(LocalDateTime.now(), new EnumTest(Courses.DATASTRUCTURES), new EnumTest(Category.TEST), rand.nextInt(4));
+        File outfile = new File(Filename);
         try (PrintWriter pw = new PrintWriter(outfile)) {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-mm-dd HH:MM");
             for (int i = 0; i < xAmount; i++) {
-                Assignments fileOutput = program;
-                pw.println(fileOutput);
+                Assignments fileOutput = object;
+                pw.println(object);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-
     }
 
 
