@@ -161,15 +161,7 @@ public class Main {
         }
 
         //TODO Override an Assignment.compareTo() method then use it to output BEFORE, EQUALS, or AFTER based on the LocalDateTime.
-//        Assignments timeOne = new Assignments(5);
-//        Assignments timeTwo = new Assignments(6);
-//        if (timeTwo < timeOne) {
-//            System.out.println(" Before");
-//        } else {
-//            System.out.println("After");
-//        }
-//
-//    }
+
         // Write [X] randomly generated assignments to the file 'input.dat'.
         assignmentsFileWriter(5, "input.dat");
 
