@@ -166,23 +166,16 @@ public class Main {
         assignmentsFileWriter(5, "input.dat");
 
         //Read assignments from the file 'input.dat' and store them in an Assignment object.
-        List<String> fileReader = readFile("input.dat");
+        ArrayList<String> fileReader = readFile("input.dat");
         System.out.println(fileReader + "\n");
 
         // Remove any duplicate assignments.
-        Set<Assignments> newObjects = new HashSet<>();
-        //ArrayList<Assignments> objects = new ArrayList<>();
-         for (int i = 0; i < fileReader.size(); i++) {
-            newObjects.add(assign1);
-        }
-        System.out.println(" Duplicated objects " + newObjects);
+
     }
 
 
-
-
-    private static List<String> readFile(String filename) {
-        List<String> records = new ArrayList<String>();
+    private static ArrayList<String> readFile(String filename) {
+        ArrayList<String> records = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
             String line;
